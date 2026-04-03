@@ -1,0 +1,77 @@
+:root {
+  --primary: #000000;
+  --primary-dark: #000000;
+  --text: #000000;
+  --text-light: #3b4552;
+  --bg: #f8fafc;
+  --dark-bg: #0f172a;
+  --dark-text: #e2e8f0;
+}
+
+.dark {
+  --bg: var(--dark-bg);
+  --text: var(--dark-text);
+  --text-light: #94a3b8;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.skill-pill {
+  transition: transform 0.2s ease;
+}
+
+.skill-pill:hover {
+  transform: scale(1.05);
+}
+
+.section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-input {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-input:focus {
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3);
+}
